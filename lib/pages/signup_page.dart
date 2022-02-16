@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_myinsta/pages/signin_page.dart';
 
 class Signup_page extends StatefulWidget {
-  const Signup_page({Key? key}) : super(key: key);
+  const Signup_page({Key key}) : super(key: key);
   static final String id="signup_page";
 
   @override

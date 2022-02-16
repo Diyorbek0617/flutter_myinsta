@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_myinsta/pages/signin_page.dart';
 
 class Splash_page extends StatefulWidget {
-  const Splash_page({Key? key}) : super(key: key);
+  const Splash_page({Key key}) : super(key: key);
   static final String id = "splash_page";
 
   @override

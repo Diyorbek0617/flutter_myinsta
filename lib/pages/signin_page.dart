@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_myinsta/pages/home_page.dart';
 import 'package:flutter_myinsta/pages/signup_page.dart';
 
 class Signin_page extends StatefulWidget {
-  const Signin_page({Key? key}) : super(key: key);
+  const Signin_page({Key key}) : super(key: key);
   static final String id = "signin_page";
 
   @override
@@ -12,6 +13,9 @@ class Signin_page extends StatefulWidget {
 class _Signin_pageState extends State<Signin_page> {
   var emailcontroller = TextEditingController();
   var passwordcontroller = TextEditingController();
+  _callHomePage(){
+    Navigator.pushReplacementNamed(context, Home_page.id);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,23 +106,28 @@ class _Signin_pageState extends State<Signin_page> {
                     height: 10,
                   ),
 // #Sign in button
-                  Container(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.only(left: 20, right: 20),
-                    margin: EdgeInsets.only(left: 20, right: 20),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.white54.withOpacity(0.2),
-                        width: 2,
+                  GestureDetector(
+                    onTap: (){
+                      _callHomePage();
+                    },
+                    child: Container(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.only(left: 20, right: 20),
+                      margin: EdgeInsets.only(left: 20, right: 20),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.white54.withOpacity(0.2),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(7),
                       ),
-                      borderRadius: BorderRadius.circular(7),
+                      child: Center(
+                          child: Text(
+                        "Sign in",
+                        style: TextStyle(color: Colors.white, fontSize: 17),
+                      )),
                     ),
-                    child: Center(
-                        child: Text(
-                      "Sign in",
-                      style: TextStyle(color: Colors.white, fontSize: 17),
-                    )),
                   ),
                 ],
               ),
