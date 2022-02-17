@@ -13,7 +13,7 @@ class Myupoad_page extends StatefulWidget {
 }
 
 File _image;
-bool iscorrect = false;
+
 
 class _Myupoad_pageState extends State<Myupoad_page> {
   var captioncontroller = TextEditingController();
