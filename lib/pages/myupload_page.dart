@@ -1,11 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_myinsta/untills.dart';
 import "package:image_picker/image_picker.dart" show ImagePicker, ImageSource;
 
 class Myupoad_page extends StatefulWidget {
-  const Myupoad_page({Key key}) : super(key: key);
+ // const Myupoad_page({Key key}) : super(key: key);
   static const String id = "myupload_page";
-
+  PageController pageController;
+  Myupoad_page({this.pageController});
   @override
   _Myupoad_pageState createState() => _Myupoad_pageState();
 }
@@ -82,7 +84,14 @@ class _Myupoad_pageState extends State<Myupoad_page> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              if(_image!=null&&captioncontroller!=null){
+
+                widget.pageController.animateToPage(0, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+              }else{
+                Utils.fireToast("rasm va izoh bo'sh bo'lmasligi kerak!");
+              }
+            },
             icon: const Icon(Icons.add_a_photo_outlined),
             color: const Color.fromRGBO(245, 96, 64, 1),
           ),

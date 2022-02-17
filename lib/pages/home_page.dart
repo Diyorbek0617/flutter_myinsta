@@ -9,7 +9,7 @@ import 'package:flutter_myinsta/pages/myupload_page.dart';
 
 
 class Home_page extends StatefulWidget {
-  const Home_page({Key key}) : super(key: key);
+   Home_page({Key key}) : super(key: key);
   static final String id="home_page";
 
   @override
@@ -34,10 +34,10 @@ class _Home_pageState extends State<Home_page> {
     return Scaffold(
       body:  PageView(
         controller: _pageController,
-        children: const [
-          Myfeed_page(),
+        children:  [
+          Myfeed_page(pageController: _pageController),
           Mysearch_page(),
-          Myupoad_page(),
+          Myupoad_page(pageController: _pageController),
           My_likes_page(),
           My_profile_page(),
 
